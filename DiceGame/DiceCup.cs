@@ -56,6 +56,15 @@ namespace DiceGame
 
         }
 
+        public void ShowValues()
+        {
+            
+            for (int index = 0; index < dieMany.Length; index++)
+            {
+                Console.WriteLine("Terning {0} har værdien {1}",index,dieMany[index]);
+            }
+        }
+
 
     }
 }
