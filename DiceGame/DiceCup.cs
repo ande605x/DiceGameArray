@@ -10,6 +10,7 @@ namespace DiceGame
         private Die die1red;
         private Die die2;
         private Die die1000;
+        private Die[] dieMany;
 
         public DiceCup()
         {
@@ -19,6 +20,7 @@ namespace DiceGame
             die1red = new Die(10);
             die2 = new Die(4);
             die1000 = new Die(20);
+            dieMany = new Die[5] { new Die(6), new Die(6), new Die(10), new Die(10), new Die(10) };
 
         }
         /// <summary>
