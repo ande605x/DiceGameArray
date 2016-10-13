@@ -7,19 +7,14 @@ namespace DiceGame
 {
     class DiceCup
     {
-        private Die die1red;
-        private Die die2;
-        private Die die1000;
-        private Die[] dieMany;
+         private Die[] dieMany;
 
         public DiceCup()
         {
             // VERY IMPORTANT! When we have instance fields of a class type,
             // we MUST remember to create actual objects in the constructor,
             // that the instance fields can then point to.
-            die1red = new Die(10);
-            die2 = new Die(4);
-            die1000 = new Die(20);
+           
             dieMany = new Die[5] { new Die(6), new Die(6), new Die(10), new Die(10), new Die(10) };
 
         }
@@ -28,35 +23,24 @@ namespace DiceGame
         /// </summary>
         public void RollAllDiceInCup()
         {
-            //die1.RollDie();
-            //die2.RollDie();
-            RollTwoDice();
-            die1000.RollDie();
+            for(int index=0;index<dieMany.Length; index++)
+                dieMany[index].RollDie();
         }
 
-        public void RollTwoDice()
-        {
-            die1red.RollDie();
-            die2.RollDie();
-        }
-        /// <summary>
-        /// ruller den røde terning
-        /// </summary>
-        public void RollRedDie()
-        {
-            die1red.RollDie();
-
-        }
+       
 
 
         // You must create a method with the below header:
         /// <summary>
-        /// returnerer værdierer fra de tre terninger
+        /// returnerer værdierer fra alle terninger
         /// </summary>
         /// <returns></returns>
          public int GetTotalValue()
         {
-            return die1red.GetValue() + die2.GetValue() + die1000.GetValue();
+            int total = 0;
+            for (int index = 0; index < dieMany.Length; index++)
+                total = dieMany[index].GetValue();
+            return total;
         }
 
         // You must create a method with the below header:
